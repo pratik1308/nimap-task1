@@ -1,0 +1,73 @@
+.header{
+	height: 600px; background-image: url('/assets/images/slide_01.jpg');
+	color: #fff;
+}
+.navbar-brand ml-5 mt-5{
+	color: #ffff;
+}
+.subscribe{
+	background-color: #020313; padding: 80px;
+}
+.new{
+	
+	width: 100%;
+}
+.modal-header{
+	background-color: #0cb1e7;
+}
+.close {
+	color: #fff;
+}
+.header a {
+    color: #fff;
+    }
+.input{
+    	
+        padding: 100px;
+    }
+    .p-2 {
+    width: 100%;
+    margin: 0px 0px 20px 0px;
+}
+.input h1{
+    padding:15px;
+}
+.register{
+    padding-left: 40%;
+    margin: 50px;
+}
+.location{
+    padding: 5px 20px 5px 25px;
+}
+.imag{
+    margin: 10px;
+    padding: 5px;
+}
+.text-primary_t{
+    color: #fff!important;
+}
+.modal-header .close {
+    color: #fff;
+}
+.profile{
+    background-color: #1a99eb;
+}
+.profile a{
+    color: #fff;
+}
+.profile-img {
+    padding: 26px;
+    margin: 0px 10px 0px 60px;
+
+}
+.profile-btn{
+    margin-left: 25%;
+    padding-top: 10px;
+}
+.pro_tag{
+    margin-left: 80px;
+    padding: 10px;
+}   
+.profile-head{
+    padding: 15px;
+}

@@ -1,0 +1,58 @@
+<div class="profile">
+	<nav class="navbar navbar-expand-lg " >
+  		<a class="navbar-brand ml-5 mt-5" href="#" >DEMO APP</a>
+  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+  		</button>
+  		<div class="collapse navbar-collapse" id="navbarNav">
+    		<ul class="navbar-nav ml-auto mt-5 mr-5">
+      			<li class="nav-item ">
+        			<a class="nav-link" href="#">HOME</a>
+      			</li>
+      			<li class="nav-item">
+        			<a class="nav-link" href="#">ABOUT US</a>
+      			</li>
+      			<li class="nav-item">
+        			<a class="nav-link" href="#">JOBS</a>
+      			</li>
+      			<li class="nav-item">
+        			<a class="nav-link " href="#">CLIENTS</a>
+      			</li>
+      			<li class="nav-item">
+        			<a class="nav-link " href="#">EMPLOYERS</a>
+      			</li>
+      			<li class="nav-item">
+        			<a class="nav-link " href="#">CONTACT US</a>
+      			</li>
+    		</ul>
+  		</div>
+    </nav>
+</div>
+<h1 class="pro_tag">Profile</h1>
+<form>
+    <div class="pro_section"*ngFor="let ans of profile_Data">
+    <div class="row">
+        <div class="col-4">
+            <div class="profile-img">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
+                </div>
+                <div class="profile-btn">
+                <button class="btn btn-warning">Edit Photo</button>&nbsp;&nbsp;
+				<!--<button class="btn btn-warning" (click)="editProfile(user)">Edit Profile</button>-->
+				<button class="btn btn-warning"><a href="/update/{{ans.id}}">Edit Profile</a></button>
+                
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="profile-head">
+                <p> I'm {{ans.firstName}} {{ans.lastName}} and Im above {{ans.age}} years and you can send your email to {{ans.email}}. 
+					I live in the state of {{ans.state}}. I like to play {{ans.tags}}. And please send me newsletter. please reach out to me on
+					my {{ans.phone}} number.</p>                        
+                <button type="button" class="btn btn-success">I Agree</button>
+                
+            </div>
+        </div>
+    </div>   
+    </div>
+    
+</form> 

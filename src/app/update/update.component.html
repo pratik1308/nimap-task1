@@ -1,0 +1,72 @@
+<section>
+   
+    <form action="#" id="form_update">
+        <div class="row">
+        <div class="col-4">
+                   <img [src]="url" class="new" >
+                    <input type="file" class="imag" (change)="selectFile($event)"#x1 >
+                
+               
+             </div>
+        <div class="col-8">	
+            <div class="row ">
+                <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="First name" #x2>
+                
+               
+         </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="Last name" #x3>
+                    
+                </div>
+                
+            </div>
+            <input type="email" name="email" class="form-control mt-4" placeholder="Email" #x4>
+            <input type="text" name="phone" class="form-control mt-4" placeholder="(541)754-3010" #x5>
+          
+         <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="100" min="20" max="60" class="slide" #x6></mat-slider>
+            
+            <select class="form-control mt-4" #x7>
+                  <option value="">Select State...</option>
+                  <option>Maharashtra</option>
+                  <option>Delhi</option>
+                  <option>Goa</option>
+            </select>
+            
+            <select class="form-control mt-4" #x8 >
+                  <option value="">Select Country...</option>
+                  <option>India</option>
+                  <option>US</option>
+                  <option>Japan</option>
+            </select>
+           
+             <mat-form-field class="example-chip-list" >
+
+                 <mat-chip-list #chipList >
+                   <mat-chip *ngFor="let tag of tags" [selectable]="selectable"
+                            [removable]="removable" (removed)="remove(tag)"  >
+                     {{tag.name}}
+                     <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                   </mat-chip>
+                   <input type="text" placeholder="tags"
+                          [matChipInputFor]="chipList"
+                          [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                          [matChipInputAddOnBlur]="addOnBlur"
+                          (matChipInputTokenEnd)="add($event)" #x9>
+                 </mat-chip-list>
+               </mat-form-field>
+             <input type="text" name="address" class="form-control mt-4" placeholder="Address" #x10>
+            
+            <input type="checkbox" class="form-check-input mt-3 ml-1" id="exampleCheck1">
+            <label class="form-check-label mt-2 ml-4" for="exampleCheck1" >Subscribe to our newsletter</label>
+            
+                <div class="col-6 mt-4">
+                   <button type="button"(click)="update_record(x1,x2,x3,x4,x5,x6,x7,x8,x9,x10)">Update</button>
+                </div>
+               
+           
+        </div>
+    </div>
+    </form>
+    
+</section>

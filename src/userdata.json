@@ -1,0 +1,30 @@
+{
+  "user": [
+    {
+      "photo": "C:\\fakepath\\c2.jpg",
+      "firstName": "Vaishnavi",
+      "lastName": "Shirbhate",
+      "email": "vaishnavishirbhate3842@gmail.com",
+      "phone": "+919076474650",
+      "age": 22,
+      "state": "Maharashtra",
+      "country": "India",
+      "tags": "",
+      "address": "CHANDIVALI ANDHERI (E), MUMBAI.",
+      "id": 3
+    },
+    {
+      "photo": "C:\\fakepath\\download.png",
+      "firstName": "Anuu",
+      "lastName": "Shirbhate",
+      "email": "anu3842@gmail.com",
+      "phone": "+919076474651",
+      "age": 21,
+      "state": "Delhi",
+      "country": "US",
+      "tags": "",
+      "address": "CHANDIVALI ANDHERI (E), MUMBAI.",
+      "id": 4
+    }
+  ]
+}

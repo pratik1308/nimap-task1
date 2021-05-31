@@ -1,0 +1,207 @@
+
+<header>
+	<div class="header">
+	<nav class="navbar navbar-expand-lg " >
+  		<a class="navbar-brand ml-5 mt-5" href="#" >DEMO APP</a>
+  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+  		</button>
+  		<div class="collapse navbar-collapse" id="navbarNav">
+    		<ul class="navbar-nav ml-auto mt-5 mr-5">
+      			<li class="nav-item ">
+        			<a class="nav-link" href="#">HOME</a>
+      			</li>
+      			<li class="nav-item">
+        			<a class="nav-link" href="#">ABOUT US</a>
+      			</li>
+      			<li class="nav-item">
+        			<a class="nav-link" href="#">JOBS</a>
+      			</li>
+      			<li class="nav-item">
+        			<a class="nav-link " href="#">CLIENTS</a>
+      			</li>
+      			<li class="nav-item">
+        			<a class="nav-link " href="#">EMPLOYERS</a>
+      			</li>
+      			<li class="nav-item">
+        			<a class="nav-link " href="#">CONTACT US</a>
+      			</li>
+    		</ul>
+  		</div>
+	</nav>
+	<div class="input">
+		<h1>I'm looking for you...</h1>
+		<div class="container banner_input">
+			<div class="row">
+				<div class="col-md-8 col-sm-12">
+					<input class="description  p-2" type="text" name="description" placeholder="Enter a job description">
+				</div>
+				<div class="col-md-4 col-sm-12">
+					<button class="btn btn-primary search_btn pt-2 pb-2"><i class="fa fa-search"></i><span class="search pl-2">Search</span></button>
+				</div>
+			</div>
+		</div>
+		<div class="container checkbox">
+			<div class="row">
+				<div class="col-md-8 col-sm-12">
+					<div class="row">
+						<div class="col-md-8 col-sm-12">
+							<div class="row">
+								<div class="col-md-4 col-sm-12">
+									<span><input id="fulltime" type="checkbox" name="fulltime"></span>&nbsp;<span class="fulltime text-white pl-1">Full Time</span>
+								</div>
+								<div class="col-md-8 col-sm-12">
+									<input type="checkbox" name="parttime">&nbsp;<span class="parttime text-white pl-1">Part Time/Casual/Freelance</span>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-12">
+							<input class="location" type="text" name="location" placeholder="select your location">
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-12">
+				
+				</div>
+			</div>
+	
+
+		
+		</div>
+		<div class="register">
+			<button class="btn btn-primary btn_register  " data-target="#mymodal" data-toggle="modal">Register</button>
+		</div>
+	</div>
+	
+</div>
+
+</header>
+<section>
+    <div class="modal fade" id="mymodal">
+       <div class="modal-dialog">
+           <div class="modal-content">
+               <div class="modal-header">
+                   <h3 class="text-primary_t">Register</h3>
+                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+               </div>
+               <div class="modal-body">
+                   <form action="#" [formGroup]="registerForm" (ngSubmit)="registerData(registerForm)">
+                       <div class="row">
+                       <div class="col-4">
+                                  <img [src]="url" class="new" >
+								   <input type="file" class="imag" (change)="selectFile($event)" formControlName="photo" >
+							   
+							   <div *ngIf="registerForm.controls['photo'].touched && !registerForm.controls['photo'].valid">  
+								<span *ngIf="registerForm.controls['photo'].hasError('required') ">  
+									Photo is required  
+								</span>
+								</div>
+							</div>
+                       <div class="col-8">	
+                           <div class="row ">
+                               <div class="col-md-6">
+                                   <input type="text" class="form-control" placeholder="First name" formControlName="firstName">
+							   
+							   <div *ngIf="registerForm.controls['firstName'].touched && !registerForm.controls['firstName'].valid">  
+								<span *ngIf="registerForm.controls['firstName'].hasError('required') ">  
+									Name is required  
+								</span>
+								<span *ngIf="registerForm.controls['firstName'].hasError('minlength') ">  
+									Name Min Length: 2  
+								</span>
+								<span *ngIf="registerForm.controls['firstName'].hasError('maxlength') ">  
+									Name max Length: 20 
+								</span>
+								<span *ngIf="registerForm.controls['firstName'].hasError('pattern') ">  
+									apha char
+								</span>        
+							</div>
+						</div>
+                               <div class="col-md-6">
+								   <input type="text" class="form-control" placeholder="Last name" formControlName="lastName">
+								   <div *ngIf="registerForm.controls['lastName'].touched && !registerForm.controls['lastName'].valid">  
+									<span *ngIf="registerForm.controls['lastName'].hasError('required') ">  
+										LastName is required  
+									</span>
+									</div>
+							   </div>
+							   
+                           </div>
+                           <input type="email" name="email" class="form-control mt-4" placeholder="Email" formControlName="email">
+						   <input type="text" name="phone" class="form-control mt-4" placeholder="(541)754-3010" formControlName="phone">
+						   <div *ngIf="registerForm.controls['phone'].touched && !registerForm.controls['phone'].valid">  
+							<span *ngIf="registerForm.controls['phone'].hasError('required') ">  
+								phone is required  
+							</span>  
+						</div>
+						<mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="100" min="20" max="60" formControlName="age"></mat-slider>
+						   <div *ngIf="registerForm.controls['age'].touched && !registerForm.controls['age'].valid">  
+							<span *ngIf="registerForm.controls['age'].hasError('required') ">  
+								Age is required  
+							</span>
+							</div>
+                           <select class="form-control mt-4" formControlName="state">
+                                 <option value="">Select State...</option>
+                                 <option>Maharashtra</option>
+                                 <option>Delhi</option>
+                                 <option>Goa</option>
+						   </select>
+						   <div *ngIf="registerForm.controls['state'].touched && !registerForm.controls['state'].valid">  
+							<span *ngIf="registerForm.controls['state'].hasError('required') ">  
+								state is required  
+							</span>
+							</div>
+                           <select class="form-control mt-4" formControlName="country">
+                                 <option value="">Select Country...</option>
+                                 <option>India</option>
+                                 <option>US</option>
+                                 <option>Japan</option>
+						   </select>
+						   <div *ngIf="registerForm.controls['country'].touched && !registerForm.controls['country'].valid">  
+							<span *ngIf="registerForm.controls['country'].hasError('required') ">  
+								country is required  
+							</span>
+							</div>
+							<mat-form-field class="example-chip-list" >
+  
+								<mat-chip-list #chipList >
+								  <mat-chip *ngFor="let tag of tags" [selectable]="selectable"
+										   [removable]="removable" (removed)="remove(tag)"  >
+									{{tag.name}}
+									<mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+								  </mat-chip>
+								  <input type="text" placeholder="tags"
+										 [matChipInputFor]="chipList"
+										 [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+										 [matChipInputAddOnBlur]="addOnBlur"
+										 (matChipInputTokenEnd)="add($event)" formControlName="tags">
+								</mat-chip-list>
+							  </mat-form-field>
+							<input type="text" name="address" class="form-control mt-4" placeholder="Address" formControlName="address">
+						   <div *ngIf="registerForm.controls['address'].touched && !registerForm.controls['address'].valid">  
+							<span *ngIf="registerForm.controls['address'].hasError('required') ">  
+								address is required  
+							</span>
+							</div>
+                           <input type="checkbox" class="form-check-input mt-3 ml-1" id="exampleCheck1">
+                           <label class="form-check-label mt-2 ml-4" for="exampleCheck1" >Subscribe to our newsletter</label>
+                           <div class="row">
+                               <div class="col-6 mt-4">
+                                   <a href="#"><button class="btn btn-default border-dark w-30">Cancel</button></a>
+                               </div>
+                               <div class="col-6 mt-4">
+                                   <button type="submit" class="btn btn-primary" [disabled]="!registerForm.valid">Submit</button>
+							   </div>
+							   {{registerForm.valid}}
+                           </div>
+                       </div>
+                   </div>
+				   </form>
+				   {{msg}}
+               </div>
+           </div>
+       </div>
+   </div>
+   </section>
+   <app-content></app-content>
+   <app-footer></app-footer>
